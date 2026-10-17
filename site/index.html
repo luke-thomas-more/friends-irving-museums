@@ -104,6 +104,7 @@
   .tier li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
   .tier .radio{position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;border:2px solid #b9ae9b;display:none}
   .tier .badge{position:absolute;top:-11px;left:14px;background:var(--orange);color:var(--ink);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  .tier:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:3px}
   .tier.selected{border-color:var(--orange-deep);box-shadow:0 0 0 4px rgba(240,138,28,.18)}
   .tier.selected ul{display:block}
   @media (min-width:1000px){.tier ul{display:block}.tier{display:flex;flex-direction:column}}
@@ -139,7 +140,7 @@
   .impact h3{font-size:1.25rem;margin-bottom:6px}
   .impact p{color:var(--ink-2);font-size:.97rem}
   .impact .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;display:block}
-  .campaign{background:var(--ink);color:#fff;border:0!important}
+  .impact .campaign{background:var(--ink);color:#fff;border:0}
   .campaign h3{color:#fff}.campaign p{color:#d4e0ea!important}
   .campaign .tag{color:#ffbf7a!important}
   .campaign a{color:#ffd7a8;font-weight:700}
@@ -204,14 +205,14 @@
           <a class="btn btn-primary" href="#join">Become a Friend · from $15</a>
           <a class="btn btn-ghost" href="#join" data-renew>Renew my membership</a>
         </div>
-        <div class="trust"><span>100% volunteer-run</span><span>501(c)(3) nonprofit</span><span>Tax-deductible</span></div>
+        <div class="trust"><span>Since 2003</span><span>501(c)(3) nonprofit</span><span>Takes about 2 minutes</span></div>
       </div>
       <aside class="perks" aria-label="Member benefits">
         <h2>Every membership includes</h2>
         <ul>
           <li><span class="num">1</span><div><b>Free admission, all year</b><small>to the Irving Archives &amp; Museum</small></div></li>
           <li><span class="num">2</span><div><b>Free guest passes</b><small>bring friends along on us</small></div></li>
-          <li><span class="num">3</span><div><b>10% off in the museum store</b><small>plus priority access to special events</small></div></li>
+          <li><span class="num">3</span><div><b>10% off in the museum store</b><small>plus invitations to member events</small></div></li>
         </ul>
       </aside>
     </div>
@@ -247,6 +248,7 @@
         <div class="sum" data-summary>—</div>
         <a class="btn btn-primary" data-checkout href="#">Continue to secure checkout</a>
       </div>
+      <p class="smithsonian">On the next screen you’ll confirm your level and enter your contact details. Payment is by card, debit card or PayPal.</p>
     </div>
   </section>
 
@@ -255,18 +257,18 @@
     <div class="wrap">
       <span class="eyebrow">Your membership at work</span>
       <h2 class="title" id="impact-title">What Friends make possible</h2>
-      <p class="sub">The Friends is entirely volunteer-run, so membership dues and gifts go straight to the museums’ programs.</p>
+      <p class="sub">Membership dues and gifts fund exhibits, student field trips and the care of Irving’s historic collections.</p>
       <div class="impact">
         <article class="campaign">
           <span class="tag">Current project</span>
           <h3>Get the maps off the floor</h3>
-          <p>We’re funding professional archival shelving at the Irving Archives &amp; Museum. It will let staff safely store, catalog and digitize more than 100 historic items donated by the community, and the museum is adding $15,000 of its own toward the project.</p>
+          <p>We’re funding professional archival shelving at the Irving Archives &amp; Museum. It will let staff safely store, catalog and digitize more than 100 historic items donated by the community.</p>
           <p style="margin-top:10px"><a href="https://www.northtexasgivingday.org/organization/IAMFriends">Give to the shelving project</a></p>
         </article>
         <article>
           <span class="tag">Saved</span>
           <h3>The Big State sign</h3>
-          <p>When downtown Irving’s iconic Big State Drugstore neon sign went up for sale, Friends rallied and beat our $10,000 goal to keep it in Irving.</p>
+          <p>Friends rallied to save downtown Irving’s iconic Big State neon sign and give it a permanent home in Heritage Park.</p>
         </article>
         <article>
           <span class="tag">Free for everyone</span>
@@ -304,7 +306,7 @@
       <h2 class="title" id="ways-title">Not ready to join?</h2>
       <div class="ways">
         <a href="https://form.jotform.com/212436722699161"><b>Make a donation</b><span>Any amount, 100% tax-deductible. You can give in honor or memory of someone.</span></a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfep6cxG0SluJjRXPlhE4Z33KtA3tnQRXKkPhsHzKVnkE-ubw/viewform"><b>Volunteer</b><span>Help with events, school tours, the Spark!Lab or the archives.</span></a>
+        <a href="https://form.jotform.com/212066067742050"><b>Volunteer</b><span>Help with Friends events and fundraising, or ask about joining the board.</span></a>
         <a href="https://lp.constantcontactpages.com/su/vGkhkD0/signup"><b>Get the newsletter</b><span>Exhibits, events and news from the Irving museums.</span></a>
       </div>
     </div>
@@ -332,7 +334,8 @@
     <div class="cols">
       <div>
         <h4>Friends of the Irving Museums</h4>
-        <p>A 501(c)(3) nonprofit supporting the City of Irving museums since 2003, with roots in community advocacy going back to 1975.</p>
+        <p>A 501(c)(3) nonprofit supporting the City of Irving museums since 2003.</p>
+        <p style="margin-top:8px"><a href="https://www.facebook.com/FriendsOfTheIrvingMuseums/">Follow us on Facebook</a></p>
       </div>
       <div>
         <h4>Mail</h4>
@@ -340,7 +343,7 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <p><a href="mailto:friends@irvingarchivesandmuseum.com">friends@irvingarchivesandmuseum.com</a><br><a href="tel:+19727213758">(972) 721-3758</a></p>
+        <p><a href="mailto:friends@irvingarchivesandmuseum.com">friends@irvingarchivesandmuseum.com</a><br><a href="tel:+19722523838">(972) 252-3838</a></p>
       </div>
     </div>
     <p class="fine">© <span id="yr"></span> Friends of the Irving Museums · EIN 20-0591363 · The Friends is a separate nonprofit organization supporting the City of Irving museums.</p>
@@ -356,16 +359,18 @@
 <script>
 /* ===== CONFIG: the only thing that needs editing to go live =====
    Each tier's checkout link. Today they all point at the existing Jotform
-   membership form. Swap in per-tier payment links (e.g. Zeffy or Stripe
-   Payment Links) so the chosen level is pre-selected and checkout is one step. */
+   membership form. Monthly plans use the separate 12-payment form. Swap in per-tier payment
+   links (e.g. Zeffy or Stripe Payment Links) so the chosen level is
+   pre-selected and checkout is one step. */
 const DEFAULT_CHECKOUT = "https://form.jotform.com/friendsoftheirvingmuseums/otp-membership-form";
+const MONTHLY_CHECKOUT = "https://form.jotform.com/friendsoftheirvingmuseums/monthly-membership-form";
 const TIERS = [
   {id:"discount", name:"Student · Educator · Military · Senior", short:"Student / Senior", who:"Students, educators, military, veterans, 65+", year:15,
-   perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Priority access to special events"], group:"main"},
+   perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Invitations to member events"], group:"main"},
   {id:"individual", name:"Individual", short:"Individual", who:"One adult", year:25,
-   perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Priority access to special events"], group:"main"},
+   perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Invitations to member events"], group:"main"},
   {id:"family", name:"Family", short:"Family", who:"2 adults + all kids under 18", year:50, popular:true,
-   perks:["Free admission for 2 adults and all kids under 18","2 free guest passes a year","10% off in the museum store","Priority access to special events"], group:"main"},
+   perks:["Free admission for 2 adults and all kids under 18","2 free guest passes a year","10% off in the museum store","Invitations to member events"], group:"main"},
   {id:"associate", name:"Associate", short:"Associate", who:"Family + Smithsonian", year:100,
    perks:["Everything in Family","4 free guest passes a year","Dual Smithsonian membership*"], group:"main"},
   {id:"supporting", name:"Supporting", short:"Supporting", who:"Family + Smithsonian", year:250, month:20.87,
@@ -406,7 +411,7 @@ function render(){
   document.querySelectorAll("[data-summary]").forEach(e => e.innerHTML = `<b>${t.name}</b> · ${priceTxt}`);
   document.querySelector("[data-bar-name]").textContent = t.short + " membership";
   document.querySelector("[data-bar-price]").textContent = priceTxt;
-  const link = (CHECKOUT[t.id] && CHECKOUT[t.id][monthly ? "month" : "year"]) || DEFAULT_CHECKOUT;
+  const link = (CHECKOUT[t.id] && CHECKOUT[t.id][monthly ? "month" : "year"]) || (monthly ? MONTHLY_CHECKOUT : DEFAULT_CHECKOUT);
   document.querySelectorAll("[data-checkout]").forEach(a => { a.href = link; a.dataset.tier = t.id; });
   document.querySelector(".billing-note").textContent =
     billing === "month" ? "Monthly payments are available at the Supporting level and above. Same yearly total." : "";
