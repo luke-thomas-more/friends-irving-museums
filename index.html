@@ -134,49 +134,11 @@
   @media (max-width:759px){body{padding-bottom:calc(var(--bar-h) + env(safe-area-inset-bottom))}}
 
   /* Impact */
-  .impact{display:grid;gap:14px;margin-top:22px}
-  @media (min-width:760px){.impact{grid-template-columns:repeat(2,1fr)}}
-  .impact article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .impact h3{font-size:1.25rem;margin-bottom:6px}
-  .impact p{color:var(--ink-2);font-size:.97rem}
-  .impact .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;display:block}
-  .impact .campaign{background:var(--ink);color:#fff;border:0}
-  .campaign h3{color:#fff}.campaign p{color:#d4e0ea!important}
-  .campaign .tag{color:#ffbf7a!important}
-  .campaign a{color:#ffd7a8;font-weight:700}
-
-  /* Museums */
-  .museums{display:grid;gap:0;margin-top:20px;border-top:1px solid var(--line)}
-  @media (min-width:760px){.museums{grid-template-columns:repeat(2,1fr);column-gap:32px}}
-  .museums div{padding:16px 0;border-bottom:1px solid var(--line)}
-  .museums b{font-family:var(--serif);font-size:1.15rem}
-  .museums p{font-size:.93rem;color:var(--muted)}
-
-  /* Irving Story galleries */
-  .galleries{display:grid;gap:14px;margin-top:22px;counter-reset:g}
-  @media (min-width:760px){.galleries{grid-template-columns:repeat(3,1fr)}}
-  .galleries article{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--orange);border-radius:var(--radius);padding:20px}
-  .galleries article:nth-child(2){border-top-color:var(--blue)}
-  .galleries article:nth-child(3){border-top-color:var(--green)}
-  .galleries .era{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
-  .galleries h3{font-size:1.25rem;margin-bottom:6px}
-  .galleries p{color:var(--ink-2);font-size:.97rem}
-
-  /* Who we are: how the pieces fit */
-  .fit{display:grid;gap:12px;margin-top:22px}
-  @media (min-width:760px){.fit{grid-template-columns:repeat(3,1fr)}}
-  .fit div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:relative}
-  .fit div.us{background:var(--ink);color:#fff;border:0}
-  .fit div.us p{color:#c4d3df}
-  .fit b{display:block;font-family:var(--serif);font-size:1.2rem;margin-bottom:4px}
-  .fit small{display:block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
-  .fit div.us small{color:#ffd7a8}
-  .fit p{font-size:.95rem;color:var(--ink-2)}
-  .timeline{list-style:none;margin-top:28px;border-left:3px solid var(--line);padding-left:20px;max-width:640px}
-  .timeline li{position:relative;padding:0 0 18px}
-  .timeline li::before{content:"";position:absolute;left:-28px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--orange)}
-  .timeline b{font-family:var(--serif);font-size:1.1rem;margin-right:8px}
-  .timeline span{color:var(--ink-2);font-size:.97rem}
+  .campaign{background:var(--ink);color:#fff;border-radius:var(--radius);padding:20px;margin-top:22px;max-width:640px}
+  .campaign h3{font-size:1.25rem;margin-bottom:6px}
+  .campaign p{color:#c4d3df;font-size:.97rem}
+  .campaign a{color:#ffd7a8}
+  .campaign .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#ffd7a8;margin-bottom:6px;display:block}
 
   /* Other ways */
   .ways{display:grid;gap:12px;margin-top:20px}
@@ -211,7 +173,6 @@
   <div class="wrap">
     <a href="#top" aria-label="Friends of the Irving Museums — home"><img src="assets/fotim-logo.png" alt="Friends of the Irving Museums" width="96" height="44"></a>
     <nav aria-label="Main">
-      <a class="text" href="#story">The Irving Story</a>
       <a class="text" href="#about">Who we are</a>
       <a class="text" href="#faq">FAQ</a>
       <a class="btn btn-primary" href="#join">Join</a>
@@ -279,110 +240,18 @@
     </div>
   </section>
 
-  <!-- IRVING STORY -->
-  <section id="story" aria-labelledby="story-title">
-    <div class="wrap">
-      <span class="eyebrow">The Irving Story</span>
-      <h2 class="title" id="story-title">From frontier town to international city</h2>
-      <p class="sub">At the heart of the Irving Archives &amp; Museum is <i>The Irving Story</i>, a 4,000-square-foot immersive exhibit that traces the city from its frontier days to the place it is today, in three galleries.</p>
-      <div class="galleries">
-        <article>
-          <span class="era">Gallery 1</span>
-          <h3>Frontier &amp; Early Irving</h3>
-          <p>The early history of the region, when settlers began building small communities.</p>
-        </article>
-        <article>
-          <span class="era">Gallery 2</span>
-          <h3>Suburbia</h3>
-          <p>How the automobile and the post-war baby boom remade Irving from a small farm town into a fast-growing suburb.</p>
-        </article>
-        <article>
-          <span class="era">Gallery 3</span>
-          <h3>International City</h3>
-          <p>From the 1970s on, Irving grew from a suburb into a vibrant, multicultural, independent city.</p>
-        </article>
-      </div>
-      <p style="margin-top:18px">Members see it free, all year. <a href="https://www.irvingarchivesandmuseum.com/permanent-exhibition">More about the exhibit →</a></p>
-    </div>
-  </section>
-
   <!-- WHO WE ARE -->
-  <section id="about" aria-labelledby="about-title" style="padding-top:8px">
+  <section id="about" aria-labelledby="about-title">
     <div class="wrap">
       <span class="eyebrow">Who we are</span>
-      <h2 class="title" id="about-title">The museum tells Irving’s story. The Friends help make it possible.</h2>
-      <p class="sub">The Friends of the Irving Museums is an independent, volunteer-led nonprofit. We’re not part of the City; we exist to support its museums.</p>
-      <div class="fit">
-        <div>
-          <small>Runs the museums</small>
-          <b>City of Irving</b>
-          <p>Operates the Irving Archives &amp; Museum and its sister museums: the building, the collections, and the staff who care for them.</p>
-        </div>
-        <div class="us">
-          <small>Raises the support</small>
-          <b>The Friends</b>
-          <p>A 501(c)(3) with a 13-member volunteer board. We fund exhibits, programs, student field trips and the care of the collections.</p>
-        </div>
-        <div>
-          <small>Makes it happen</small>
-          <b>You</b>
-          <p>Members and donors. Your dues and gifts come to the Friends, and we put them to work at the museums.</p>
-        </div>
+      <h2 class="title" id="about-title">Friends of Irving’s story</h2>
+      <p class="sub">Irving grew from a frontier farm town into a booming suburb and then an international city, and the Irving Archives &amp; Museum tells that story. The Friends is an independent, volunteer-led nonprofit founded in 2003 to champion a history museum for Irving. The City runs the museums; we raise money for exhibits, student field trips, Free Second Saturdays and the care of the collections.</p>
+      <div class="campaign">
+        <span class="tag">Current project</span>
+        <h3>Get the maps off the floor</h3>
+        <p>We’re funding archival shelving so museum staff can safely store and digitize more than 100 historic items donated by the community. <a href="https://www.northtexasgivingday.org/organization/IAMFriends">Give to the shelving project</a></p>
       </div>
-      <ol class="timeline" aria-label="Our history">
-        <li><b>1975</b><span>For the U.S. Bicentennial, volunteers open Irving’s first city museum. It later closes as visits decline.</span></li>
-        <li><b>2003</b><span>The Friends of the Irving Museums forms to champion a central history museum for Irving.</span></li>
-        <li><b>2017</b><span>Renovation begins on the former Central Library at 801 W. Irving Blvd.</span></li>
-        <li><b>2020</b><span>The Irving Archives &amp; Museum opens in February, built with help from Friends donations.</span></li>
-        <li><b>Today</b><span>The Friends funds exhibits, Free Second Saturdays, field trips and new archival shelving.</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- IMPACT -->
-  <section id="impact" aria-labelledby="impact-title" style="padding-top:8px">
-    <div class="wrap">
-      <span class="eyebrow">Your membership at work</span>
-      <h2 class="title" id="impact-title">What Friends make possible</h2>
-      <p class="sub">Membership dues and gifts fund exhibits, student field trips and the care of Irving’s historic collections.</p>
-      <div class="impact">
-        <article class="campaign">
-          <span class="tag">Current project</span>
-          <h3>Get the maps off the floor</h3>
-          <p>We’re funding professional archival shelving at the Irving Archives &amp; Museum. It will let staff safely store, catalog and digitize more than 100 historic items donated by the community.</p>
-          <p style="margin-top:10px"><a href="https://www.northtexasgivingday.org/organization/IAMFriends">Give to the shelving project</a></p>
-        </article>
-        <article>
-          <span class="tag">Saved</span>
-          <h3>The Big State sign</h3>
-          <p>Friends rallied to save downtown Irving’s iconic Big State neon sign and give it a permanent home in Heritage Park.</p>
-        </article>
-        <article>
-          <span class="tag">Free for everyone</span>
-          <h3>Free Second Saturdays</h3>
-          <p>The Friends sponsors free admission and free activities at the Irving Archives &amp; Museum on the second Saturday of every month.</p>
-        </article>
-        <article>
-          <span class="tag">For students</span>
-          <h3>School field trips</h3>
-          <p>Member dues help sponsor field trips and tours, bringing Irving schoolchildren face to face with their city’s history.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- MUSEUMS -->
-  <section id="museums" aria-labelledby="museums-title" style="padding-top:8px">
-    <div class="wrap">
-      <span class="eyebrow">Who we support</span>
-      <h2 class="title" id="museums-title">The Irving museums</h2>
-      <div class="museums">
-        <div><b>Irving Archives &amp; Museum</b><p>801 W. Irving Blvd. The Irving Story, traveling exhibits, and Texas’s first Smithsonian Spark!Lab.</p></div>
-        <div><b>Jackie Townsell Bear Creek Heritage Center</b><p>Preserving the history of one of Irving’s oldest African American communities.</p></div>
-        <div><b>Ruth Paine House Museum</b><p>A historic home tied to the events of November 1963.</p></div>
-        <div><b>Mustangs of Las Colinas Museum</b><p>The story behind one of the world’s largest equestrian sculptures.</p></div>
-      </div>
-      <p style="margin-top:18px"><a href="https://www.irvingarchivesandmuseum.com/">Plan a visit: hours, admission and directions →</a></p>
+      <p class="sub" style="margin-top:18px">We support all four City of Irving museums: the Irving Archives &amp; Museum, the Jackie Townsell Bear Creek Heritage Center, the Ruth Paine House Museum and the Mustangs of Las Colinas Museum. <a href="https://www.irvingarchivesandmuseum.com/">Plan a visit →</a></p>
     </div>
   </section>
 
@@ -405,10 +274,7 @@
       <span class="eyebrow">Questions</span>
       <h2 class="title" id="faq-title">Good to know</h2>
       <div class="faq">
-        <details><summary>Who are the Friends, and what do you do?</summary><p>We’re a volunteer-led 501(c)(3) nonprofit, founded in 2003 to champion a history museum for Irving. We helped fund the Irving Archives &amp; Museum, which opened in 2020, and today we raise money for exhibits, public programs, student field trips and the care of the city’s historic collections. We support all four City of Irving museums.</p></details>
-        <details><summary>Are you part of the museum or the City of Irving?</summary><p>No. The City of Irving runs the museums. The Friends is a separate nonprofit with its own volunteer board that works alongside museum staff. Think of us as the museum’s fan club with a checkbook.</p></details>
-        <details><summary>Where does my membership money go?</summary><p>To the Friends, not the City’s general budget. The board puts it toward projects at the museums, like Free Second Saturdays, school field trips and the archival shelving project. Your member benefits, such as free admission and the store discount, are honored by the museum.</p></details>
-        <details><summary>How long does a membership last?</summary><p>365 days from the day you join or renew.</p></details>
+        <details><summary>Who are the Friends, and where does my money go?</summary><p>We’re a volunteer-led 501(c)(3) nonprofit, separate from the City of Irving, which runs the museums. Your dues and gifts go to the Friends, not the City’s budget, and our board puts them toward exhibits, programs, field trips and collection care at the museums. Member benefits like free admission are honored by the museum.</p></details>
         <details><summary>Is my membership tax-deductible?</summary><p>The Friends of the Irving Museums is a 501(c)(3) nonprofit (EIN 20-0591363). Contributions are tax-deductible as allowed by law; check with your tax advisor about the value of member benefits.</p></details>
         <details><summary>Can I pay monthly?</summary><p>Yes, at the Supporting, Sustaining and Benefactor levels you can pay in 12 monthly installments. The yearly total is the same.</p></details>
         <details><summary>Can I pay by check or cash?</summary><p>Yes. Print the <a href="https://cdn.website-editor.net/a188d6edb9784cabaaef6aea8d838740/files/uploaded/Paper%2520Membership-Donation%2520Form%2520V1.8.pdf">paper membership form</a> and mail it with a check to Friends of the Irving Museums, P.O. Box 170142, Irving, TX 75017-0142, or bring it to the Irving Archives &amp; Museum at 801 W. Irving Blvd. Please don’t mail cash; bring it in person. Check and cash memberships can’t be paid in installments.</p></details>
