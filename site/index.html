@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Friends of the Irving Museums — Become a Member</title>
+<meta name="description" content="Join the Friends of the Irving Museums. Free admission, guest passes and store discounts — and you keep Irving's history alive. Memberships from $15 a year.">
+<meta name="theme-color" content="#14324a">
+<meta property="og:title" content="Friends of the Irving Museums">
+<meta property="og:description" content="Become a Friend. Free admission to the Irving Archives & Museum, guest passes, and the satisfaction of keeping Irving's history alive. From $15 a year.">
+<link rel="icon" href="assets/fotim-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14324a;          /* deep navy, anchors the logo blue */
+    --ink-2:#3d566b;
+    --muted:#5f7283;
+    --paper:#fbf8f3;        /* warm archival paper */
+    --card:#ffffff;
+    --line:#e6dfd4;
+    --blue:#1c7cc0;         /* logo "FRIENDS" blue, deepened for contrast */
+    --green:#4e9a2c;        /* logo green, deepened */
+    --orange:#f08a1c;       /* logo mustang orange */
+    --orange-deep:#b85407;  /* AA-contrast orange for text/buttons */
+    --radius:14px;
+    --shadow:0 1px 2px rgba(20,50,74,.06),0 6px 24px rgba(20,50,74,.08);
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --bar-h:76px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:17px}
+  a{color:var(--blue)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
+  p{text-wrap:pretty}
+  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-deep)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 24px;border-radius:999px;font:700 1.02rem/1 var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .12s ease,background .15s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--orange-deep);color:#fff}
+  .btn-primary:hover{background:#9c4705}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:99}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:30;background:rgba(251,248,243,.94);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  header.site img{height:44px;width:auto}
+  header.site nav{display:flex;align-items:center;gap:22px}
+  header.site nav a.text{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:.95rem}
+  header.site nav a.text:hover{color:var(--ink)}
+  header.site .btn{min-height:42px;padding:0 18px;font-size:.95rem}
+  @media (max-width:760px){header.site nav a.text{display:none}}
+
+  /* Hero */
+  .hero{padding:44px 0 28px}
+  .hero h1{font-size:clamp(2.2rem,7vw,3.8rem);margin:.35em 0 .3em;max-width:14ch}
+  .hero h1 em{font-style:normal;color:var(--orange-deep)}
+  .hero p.lede{font-size:1.15rem;color:var(--ink-2);max-width:38ch}
+  .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 18px}
+  .trust{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.88rem;color:var(--muted)}
+  .trust span::before{content:"✓ ";color:var(--green);font-weight:700}
+  .hero-grid{display:grid;gap:28px;align-items:end}
+  @media (min-width:900px){.hero{padding:72px 0 48px}.hero-grid{grid-template-columns:1.25fr 1fr}}
+  .perks{background:var(--ink);color:#fff;border-radius:var(--radius);padding:22px 22px 8px;box-shadow:var(--shadow)}
+  .perks h2{font-size:1.15rem;font-family:var(--sans);font-weight:700;letter-spacing:0;margin-bottom:10px;color:#ffd7a8}
+  .perks ul{list-style:none}
+  .perks li{display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+  .perks li:first-child{border-top:0}
+  .perks b{display:block;font-size:1rem}
+  .perks small{color:#c4d3df;font-size:.9rem}
+  .perks .num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-items:center;font-weight:800}
+
+  section{padding:48px 0}
+  section h2.title{font-size:clamp(1.75rem,5vw,2.5rem);margin:.3em 0 .4em}
+  section p.sub{color:var(--ink-2);max-width:56ch}
+
+  /* Membership picker */
+  #join{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .billing{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;margin:18px 0 6px}
+  .billing button{min-height:40px;padding:0 16px;border-radius:999px;border:0;background:transparent;font:600 .92rem var(--sans);color:var(--ink-2);cursor:pointer}
+  .billing button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .billing-note{font-size:.85rem;color:var(--muted);min-height:1.3em}
+  .tiers{display:grid;gap:12px;margin-top:14px}
+  @media (min-width:700px){.tiers{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1000px){.tiers{grid-template-columns:repeat(4,1fr)}}
+  .tier{position:relative;display:block;background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:16px 16px 14px;cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease}
+  .tier:hover{border-color:#c9bfae}
+  .tier input{position:absolute;opacity:0;pointer-events:none}
+  .tier .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .tier .name{font-weight:800;font-size:1.05rem}
+  .tier .who{font-size:.85rem;color:var(--muted);margin-top:2px}
+  .tier .price{font-family:var(--serif);font-size:1.6rem;font-weight:700;white-space:nowrap}
+  .tier .price small{font-family:var(--sans);font-size:.8rem;color:var(--muted);font-weight:600}
+  .tier ul{list-style:none;margin-top:10px;font-size:.9rem;color:var(--ink-2);display:none}
+  .tier li{padding:3px 0 3px 22px;position:relative}
+  .tier li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+  .tier .radio{position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;border:2px solid #b9ae9b;display:none}
+  .tier .badge{position:absolute;top:-11px;left:14px;background:var(--orange);color:var(--ink);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  .tier.selected{border-color:var(--orange-deep);box-shadow:0 0 0 4px rgba(240,138,28,.18)}
+  .tier.selected ul{display:block}
+  @media (min-width:1000px){.tier ul{display:block}.tier{display:flex;flex-direction:column}}
+  .tier.disabled{opacity:.45;cursor:not-allowed}
+  .tier.disabled .price small::after{content:" (annual only)"}
+  .more-tiers{margin-top:14px}
+  .more-tiers summary{cursor:pointer;font-weight:700;color:var(--blue);min-height:44px;display:flex;align-items:center;list-style:none}
+  .more-tiers summary::-webkit-details-marker{display:none}
+  .more-tiers summary::after{content:"＋";margin-left:8px}
+  .more-tiers[open] summary::after{content:"－"}
+  .smithsonian{font-size:.82rem;color:var(--muted);margin-top:14px;max-width:70ch}
+
+  .checkout{display:none}
+  @media (min-width:760px){
+    .checkout{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px;padding:18px 20px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line)}
+    .checkout .sum{font-size:1.05rem}
+  }
+
+  /* Sticky mobile join bar */
+  .joinbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(20,50,74,.12);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s ease}
+  .joinbar.show{transform:none}
+  .joinbar .sum{flex:1;min-width:0;line-height:1.25}
+  .joinbar .sum b{display:block;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .joinbar .sum span{font-size:.85rem;color:var(--muted)}
+  .joinbar .btn{min-height:50px;padding:0 20px;flex:0 0 auto}
+  @media (min-width:760px){.joinbar{display:none}}
+  @media (max-width:759px){body{padding-bottom:calc(var(--bar-h) + env(safe-area-inset-bottom))}}
+
+  /* Impact */
+  .impact{display:grid;gap:14px;margin-top:22px}
+  @media (min-width:760px){.impact{grid-template-columns:repeat(2,1fr)}}
+  .impact article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .impact h3{font-size:1.25rem;margin-bottom:6px}
+  .impact p{color:var(--ink-2);font-size:.97rem}
+  .impact .tag{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;display:block}
+  .campaign{background:var(--ink);color:#fff;border:0!important}
+  .campaign h3{color:#fff}.campaign p{color:#d4e0ea!important}
+  .campaign .tag{color:#ffbf7a!important}
+  .campaign a{color:#ffd7a8;font-weight:700}
+
+  /* Museums */
+  .museums{display:grid;gap:0;margin-top:20px;border-top:1px solid var(--line)}
+  @media (min-width:760px){.museums{grid-template-columns:repeat(2,1fr);column-gap:32px}}
+  .museums div{padding:16px 0;border-bottom:1px solid var(--line)}
+  .museums b{font-family:var(--serif);font-size:1.15rem}
+  .museums p{font-size:.93rem;color:var(--muted)}
+
+  /* Other ways */
+  .ways{display:grid;gap:12px;margin-top:20px}
+  @media (min-width:760px){.ways{grid-template-columns:repeat(3,1fr)}}
+  .ways a{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;min-height:44px;transition:border-color .15s ease}
+  .ways a:hover{border-color:var(--ink)}
+  .ways b{display:block;font-size:1.05rem;margin-bottom:2px}
+  .ways b::after{content:" →";color:var(--orange-deep)}
+  .ways span{font-size:.92rem;color:var(--muted)}
+
+  /* FAQ */
+  .faq{margin-top:16px;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:56px;font-weight:700;padding:8px 0}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"＋";color:var(--orange-deep);font-weight:400;font-size:1.3rem}
+  .faq details[open] summary::after{content:"－"}
+  .faq p{padding:0 0 16px;color:var(--ink-2);max-width:65ch}
+
+  footer{background:var(--ink);color:#c9d6e1;padding:40px 0 28px;font-size:.93rem}
+  footer a{color:#fff}
+  footer .cols{display:grid;gap:22px}
+  @media (min-width:760px){footer .cols{grid-template-columns:1.4fr 1fr 1fr}}
+  footer h4{color:#fff;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+  footer .fine{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#9fb3c4}
+</style>
+</head>
+<body>
+<a class="skip" href="#join">Skip to membership options</a>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#top" aria-label="Friends of the Irving Museums — home"><img src="assets/fotim-logo.png" alt="Friends of the Irving Museums" width="96" height="44"></a>
+    <nav aria-label="Main">
+      <a class="text" href="#impact">Our impact</a>
+      <a class="text" href="#museums">The museums</a>
+      <a class="text" href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Friends of the Irving Museums</span>
+        <h1>Keep Irving’s story <em>alive.</em></h1>
+        <p class="lede">Become a Friend and get free admission all year, while helping fund exhibits, student field trips and the care of Irving’s historic collections.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#join">Become a Friend · from $15</a>
+          <a class="btn btn-ghost" href="#join" data-renew>Renew my membership</a>
+        </div>
+        <div class="trust"><span>100% volunteer-run</span><span>501(c)(3) nonprofit</span><span>Tax-deductible</span></div>
+      </div>
+      <aside class="perks" aria-label="Member benefits">
+        <h2>Every membership includes</h2>
+        <ul>
+          <li><span class="num">1</span><div><b>Free admission, all year</b><small>to the Irving Archives &amp; Museum</small></div></li>
+          <li><span class="num">2</span><div><b>Free guest passes</b><small>bring friends along on us</small></div></li>
+          <li><span class="num">3</span><div><b>10% off in the museum store</b><small>plus priority access to special events</small></div></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- JOIN -->
+  <section id="join" aria-labelledby="join-title">
+    <div class="wrap">
+      <span class="eyebrow">Membership</span>
+      <h2 class="title" id="join-title">Pick your membership</h2>
+      <p class="sub">Memberships last a full 365 days from the day you join. Takes about two minutes.</p>
+
+      <div class="billing" role="group" aria-label="Payment schedule">
+        <button type="button" aria-pressed="true" data-billing="year">Pay once a year</button>
+        <button type="button" aria-pressed="false" data-billing="month">Pay monthly</button>
+      </div>
+      <div class="billing-note" aria-live="polite"></div>
+
+      <form id="tierForm" onsubmit="return false">
+        <fieldset style="border:0">
+          <legend class="skip">Membership level</legend>
+          <div class="tiers" id="tiersMain"></div>
+          <details class="more-tiers" id="moreTiers">
+            <summary>See higher-giving levels (Supporting, Sustaining, Benefactor)</summary>
+            <div class="tiers" id="tiersMore"></div>
+          </details>
+        </fieldset>
+      </form>
+
+      <p class="smithsonian">* Associate level and above includes a dual membership with the Smithsonian Institution through our affiliate program: a one-year subscription to <i>Smithsonian</i> magazine, 10% off at Smithsonian stores, free admission to the Cooper Hewitt museum, and members-only online content.</p>
+
+      <div class="checkout" aria-live="polite">
+        <div class="sum" data-summary>—</div>
+        <a class="btn btn-primary" data-checkout href="#">Continue to secure checkout</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact" aria-labelledby="impact-title">
+    <div class="wrap">
+      <span class="eyebrow">Your membership at work</span>
+      <h2 class="title" id="impact-title">What Friends make possible</h2>
+      <p class="sub">The Friends is entirely volunteer-run, so membership dues and gifts go straight to the museums’ programs.</p>
+      <div class="impact">
+        <article class="campaign">
+          <span class="tag">Current project</span>
+          <h3>Get the maps off the floor</h3>
+          <p>We’re funding professional archival shelving at the Irving Archives &amp; Museum. It will let staff safely store, catalog and digitize more than 100 historic items donated by the community, and the museum is adding $15,000 of its own toward the project.</p>
+          <p style="margin-top:10px"><a href="https://www.northtexasgivingday.org/organization/IAMFriends">Give to the shelving project</a></p>
+        </article>
+        <article>
+          <span class="tag">Saved</span>
+          <h3>The Big State sign</h3>
+          <p>When downtown Irving’s iconic Big State Drugstore neon sign went up for sale, Friends rallied and beat our $10,000 goal to keep it in Irving.</p>
+        </article>
+        <article>
+          <span class="tag">Free for everyone</span>
+          <h3>Free Second Saturdays</h3>
+          <p>The Friends sponsors free admission and free activities at the Irving Archives &amp; Museum on the second Saturday of every month.</p>
+        </article>
+        <article>
+          <span class="tag">For students</span>
+          <h3>School field trips</h3>
+          <p>Member dues help sponsor field trips and tours, bringing Irving schoolchildren face to face with their city’s history.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSEUMS -->
+  <section id="museums" aria-labelledby="museums-title" style="padding-top:8px">
+    <div class="wrap">
+      <span class="eyebrow">Who we support</span>
+      <h2 class="title" id="museums-title">The Irving museums</h2>
+      <div class="museums">
+        <div><b>Irving Archives &amp; Museum</b><p>801 W. Irving Blvd. The Irving Story, traveling exhibits, and Texas’s first Smithsonian Spark!Lab.</p></div>
+        <div><b>Jackie Townsell Bear Creek Heritage Center</b><p>Preserving the history of one of Irving’s oldest African American communities.</p></div>
+        <div><b>Ruth Paine House Museum</b><p>A historic home tied to the events of November 1963.</p></div>
+        <div><b>Mustangs of Las Colinas Museum</b><p>The story behind one of the world’s largest equestrian sculptures.</p></div>
+      </div>
+      <p style="margin-top:18px"><a href="https://www.irvingarchivesandmuseum.com/">Plan a visit: hours, admission and directions →</a></p>
+    </div>
+  </section>
+
+  <!-- OTHER WAYS -->
+  <section aria-labelledby="ways-title" style="padding-top:8px">
+    <div class="wrap">
+      <span class="eyebrow">More ways to help</span>
+      <h2 class="title" id="ways-title">Not ready to join?</h2>
+      <div class="ways">
+        <a href="https://form.jotform.com/212436722699161"><b>Make a donation</b><span>Any amount, 100% tax-deductible. You can give in honor or memory of someone.</span></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfep6cxG0SluJjRXPlhE4Z33KtA3tnQRXKkPhsHzKVnkE-ubw/viewform"><b>Volunteer</b><span>Help with events, school tours, the Spark!Lab or the archives.</span></a>
+        <a href="https://lp.constantcontactpages.com/su/vGkhkD0/signup"><b>Get the newsletter</b><span>Exhibits, events and news from the Irving museums.</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title" style="padding-top:8px">
+    <div class="wrap">
+      <span class="eyebrow">Questions</span>
+      <h2 class="title" id="faq-title">Good to know</h2>
+      <div class="faq">
+        <details><summary>How long does a membership last?</summary><p>365 days from the day you join or renew.</p></details>
+        <details><summary>Is my membership tax-deductible?</summary><p>The Friends of the Irving Museums is a 501(c)(3) nonprofit (EIN 20-0591363). Contributions are tax-deductible as allowed by law; check with your tax advisor about the value of member benefits.</p></details>
+        <details><summary>Can I pay monthly?</summary><p>Yes, at the Supporting, Sustaining and Benefactor levels you can pay in 12 monthly installments. The yearly total is the same.</p></details>
+        <details><summary>Can I pay by check or cash?</summary><p>Yes. Print the <a href="https://cdn.website-editor.net/a188d6edb9784cabaaef6aea8d838740/files/uploaded/Paper%2520Membership-Donation%2520Form%2520V1.8.pdf">paper membership form</a> and mail it with a check to Friends of the Irving Museums, P.O. Box 170142, Irving, TX 75017-0142, or bring it to the Irving Archives &amp; Museum at 801 W. Irving Blvd. Please don’t mail cash; bring it in person. Check and cash memberships can’t be paid in installments.</p></details>
+        <details><summary>Who counts for the Student / Educator / Military / Senior rate?</summary><p>Students, educators, active military, veterans, and seniors 65 and over all qualify for the $15 individual membership.</p></details>
+        <details><summary>I’m already a member. How do I renew?</summary><p>Choose your level above and check out the same way. Your new 365 days start when you renew.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Friends of the Irving Museums</h4>
+        <p>A 501(c)(3) nonprofit supporting the City of Irving museums since 2003, with roots in community advocacy going back to 1975.</p>
+      </div>
+      <div>
+        <h4>Mail</h4>
+        <p>P.O. Box 170142<br>Irving, TX 75017-0142</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:friends@irvingarchivesandmuseum.com">friends@irvingarchivesandmuseum.com</a><br><a href="tel:+19727213758">(972) 721-3758</a></p>
+      </div>
+    </div>
+    <p class="fine">© <span id="yr"></span> Friends of the Irving Museums · EIN 20-0591363 · The Friends is a separate nonprofit organization supporting the City of Irving museums.</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky join bar -->
+<div class="joinbar" aria-live="polite">
+  <div class="sum"><b data-bar-name>Family</b><span data-bar-price>$50 / year</span></div>
+  <a class="btn btn-primary" data-checkout href="#">Join now</a>
+</div>
+
+<script>
+/* ===== CONFIG: the only thing that needs editing to go live =====
+   Each tier's checkout link. Today they all point at the existing Jotform
+   membership form. Swap in per-tier payment links (e.g. Zeffy or Stripe
+   Payment Links) so the chosen level is pre-selected and checkout is one step. */
+const DEFAULT_CHECKOUT = "https://form.jotform.com/friendsoftheirvingmuseums/otp-membership-form";
+const TIERS = [
+  {id:"discount", name:"Student · Educator · Military · Senior", short:"Student / Senior", who:"Students, educators, military, veterans, 65+", year:15,
+   perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Priority access to special events"], group:"main"},
+  {id:"individual", name:"Individual", short:"Individual", who:"One adult", year:25,
+   perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Priority access to special events"], group:"main"},
+  {id:"family", name:"Family", short:"Family", who:"2 adults + all kids under 18", year:50, popular:true,
+   perks:["Free admission for 2 adults and all kids under 18","2 free guest passes a year","10% off in the museum store","Priority access to special events"], group:"main"},
+  {id:"associate", name:"Associate", short:"Associate", who:"Family + Smithsonian", year:100,
+   perks:["Everything in Family","4 free guest passes a year","Dual Smithsonian membership*"], group:"main"},
+  {id:"supporting", name:"Supporting", short:"Supporting", who:"Family + Smithsonian", year:250, month:20.87,
+   perks:["Everything in Associate","Option to pay monthly"], group:"more"},
+  {id:"sustaining", name:"Sustaining", short:"Sustaining", who:"Family + Smithsonian", year:500, month:41.74,
+   perks:["Everything in Associate","Option to pay monthly"], group:"more"},
+  {id:"benefactor", name:"Benefactor", short:"Benefactor", who:"Our most generous Friends", year:1000, month:83.37,
+   perks:["Everything in Associate","Founder’s Circle recognition","Option to pay monthly"], group:"more"},
+];
+const CHECKOUT = {/* e.g. family: { year: "https://…", month: null } */};
+
+let billing = "year", selected = "family";
+const fmt = n => "$" + (Number.isInteger(n) ? n.toLocaleString() : n.toFixed(2));
+
+function priceHTML(t){
+  if (billing === "month" && t.month) return `${fmt(t.month)}<small> /mo</small>`;
+  return `${fmt(t.year)}<small> /yr</small>`;
+}
+function render(){
+  const main = document.getElementById("tiersMain"), more = document.getElementById("tiersMore");
+  main.innerHTML = more.innerHTML = "";
+  TIERS.forEach(t => {
+    const disabled = billing === "month" && !t.month;
+    const el = document.createElement("label");
+    el.className = "tier" + (t.id === selected ? " selected" : "") + (disabled ? " disabled" : "");
+    el.innerHTML = `
+      ${t.popular ? '<span class="badge">Most popular</span>' : ""}
+      <input type="radio" name="tier" value="${t.id}" ${t.id === selected ? "checked" : ""} ${disabled ? "disabled" : ""}>
+      <div class="row"><div><div class="name">${t.name}</div><div class="who">${t.who}</div></div>
+      <div class="price">${priceHTML(t)}</div></div>
+      <ul>${t.perks.map(p => `<li>${p}</li>`).join("")}</ul>`;
+    el.querySelector("input").addEventListener("change", () => { selected = t.id; render(); });
+    (t.group === "main" ? main : more).appendChild(el);
+  });
+  const t = TIERS.find(x => x.id === selected);
+  const monthly = billing === "month" && t.month;
+  const priceTxt = monthly ? `${fmt(t.month)} / month × 12` : `${fmt(t.year)} / year`;
+  document.querySelectorAll("[data-summary]").forEach(e => e.innerHTML = `<b>${t.name}</b> · ${priceTxt}`);
+  document.querySelector("[data-bar-name]").textContent = t.short + " membership";
+  document.querySelector("[data-bar-price]").textContent = priceTxt;
+  const link = (CHECKOUT[t.id] && CHECKOUT[t.id][monthly ? "month" : "year"]) || DEFAULT_CHECKOUT;
+  document.querySelectorAll("[data-checkout]").forEach(a => { a.href = link; a.dataset.tier = t.id; });
+  document.querySelector(".billing-note").textContent =
+    billing === "month" ? "Monthly payments are available at the Supporting level and above. Same yearly total." : "";
+}
+document.querySelectorAll("[data-billing]").forEach(b => b.addEventListener("click", () => {
+  billing = b.dataset.billing;
+  document.querySelectorAll("[data-billing]").forEach(x => x.setAttribute("aria-pressed", x === b));
+  if (billing === "month") {
+    document.getElementById("moreTiers").open = true;
+    if (!TIERS.find(x => x.id === selected).month) selected = "supporting";
+  }
+  render();
+}));
+
+/* Show the sticky mobile bar once the visitor scrolls past the hero */
+const bar = document.querySelector(".joinbar");
+const hero = document.querySelector(".hero");
+new IntersectionObserver(([e]) => bar.classList.toggle("show", !e.isIntersecting), {threshold:0}).observe(hero);
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
