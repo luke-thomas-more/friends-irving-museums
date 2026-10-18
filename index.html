@@ -231,7 +231,7 @@
         <div class="sum" data-summary>—</div>
         <a class="btn btn-primary" data-checkout href="#">Continue to secure checkout</a>
       </div>
-      <p class="smithsonian">On the next screen you’ll confirm your level and enter your contact details. Payment is by card, debit card or PayPal.</p>
+      <p class="smithsonian">Pay by card, Apple Pay or Google Pay. Memberships renew automatically each year, and you can cancel anytime.</p>
     </div>
   </section>
 
@@ -256,7 +256,7 @@
       <span class="eyebrow">More ways to help</span>
       <h2 class="title" id="ways-title">Not ready to join?</h2>
       <div class="ways">
-        <a href="https://form.jotform.com/212436722699161"><b>Make a donation</b><span>Any amount, 100% tax-deductible. You can give in honor or memory of someone.</span></a>
+        <a href="https://donate.stripe.com/test_cNieVf8fR6g42nr7Px18c0w"><b>Make a donation</b><span>Any amount, 100% tax-deductible. You can give in honor or memory of someone.</span></a>
         <a href="https://tally.so/r/Qo2pB1" data-tally="Qo2pB1"><b>Volunteer or get in touch</b><span>Help at events, join a committee or the board, or just ask us something.</span></a>
         <a href="https://lp.constantcontactpages.com/su/vGkhkD0/signup"><b>Get the newsletter</b><span>Exhibits, events and news from the Irving museums.</span></a>
       </div>
@@ -271,10 +271,11 @@
       <div class="faq">
         <details><summary>Who are the Friends, and where does my money go?</summary><p>We’re a volunteer-led 501(c)(3) nonprofit, separate from the City of Irving, which runs the museums. Your dues and gifts go to the Friends, not the City’s budget, and our board puts them toward exhibits, programs, field trips and collection care at the museums. Member benefits like free admission are honored by the museum.</p></details>
         <details><summary>Is my membership tax-deductible?</summary><p>The Friends of the Irving Museums is a 501(c)(3) nonprofit (EIN 20-0591363). Contributions are tax-deductible as allowed by law; check with your tax advisor about the value of member benefits.</p></details>
-        <details><summary>Can I pay monthly?</summary><p>Yes, at the Supporting, Sustaining and Benefactor levels you can pay in 12 monthly installments. The yearly total is the same.</p></details>
+        <details><summary>Can I pay monthly?</summary><p>Yes, at the Supporting, Sustaining and Benefactor levels. Your membership stays active as long as the monthly payments continue.</p></details>
         <details><summary>Can I pay by check or cash?</summary><p>Yes. Print the <a href="assets/paper-membership-form.pdf">paper membership form</a> and mail it with a check to Friends of the Irving Museums, P.O. Box 170142, Irving, TX 75017-0142, or bring it to the Irving Archives &amp; Museum at 801 W. Irving Blvd. Please don’t mail cash; bring it in person. Check and cash memberships can’t be paid in installments.</p></details>
         <details><summary>Who counts for the Student / Educator / Military / Senior rate?</summary><p>Students, educators, active military, veterans, and seniors 65 and over all qualify for the $15 individual membership.</p></details>
-        <details><summary>I’m already a member. How do I renew?</summary><p>Choose your level above and check out the same way. Your new 365 days start when you renew.</p></details>
+        <details><summary>Do memberships renew automatically?</summary><p>Yes, if you join online your membership renews each year on the date you joined, and we email you a receipt. If you joined by check or cash, just choose your level above to renew.</p></details>
+        <details><summary>How do I cancel or update my card?</summary><p>Use the <a href="https://billing.stripe.com/p/login/test_aFaeVf7bNgUI7HL8TB18c00">membership portal</a>: enter the email you joined with and we’ll send you a sign-in link. You can update your card, see receipts or turn off auto-renewal. Your benefits last until the end of the period you paid for.</p></details>
       </div>
     </div>
   </section>
@@ -308,13 +309,17 @@
 </div>
 
 <script>
-/* ===== CONFIG: the only thing that needs editing to go live =====
-   Each tier's checkout link. Today they all point at the existing Jotform
-   membership form. Monthly plans use the separate 12-payment form. Swap in per-tier payment
-   links (e.g. Zeffy or Stripe Payment Links) so the chosen level is
-   pre-selected and checkout is one step. */
-const DEFAULT_CHECKOUT = "https://form.jotform.com/friendsoftheirvingmuseums/otp-membership-form";
-const MONTHLY_CHECKOUT = "https://form.jotform.com/friendsoftheirvingmuseums/monthly-membership-form";
+/* Stripe Payment Links, one per level and billing period (built by ~/.config/fotim/stripe_build.py).
+   SANDBOX links for now: swap for the live ones before launch. */
+const CHECKOUT = {
+  discount: { year: "https://buy.stripe.com/test_28EfZj3ZBeMA1jn5Hp18c0m" },
+  individual: { year: "https://buy.stripe.com/test_3cI8wRanZeMA0fjc5N18c0n" },
+  family: { year: "https://buy.stripe.com/test_eVq28t1RtfQE8LP0n518c0o" },
+  associate: { year: "https://buy.stripe.com/test_28E6oJ53F6g4aTXfhZ18c0p" },
+  supporting: { year: "https://buy.stripe.com/test_eVqfZj53F8oc2nrc5N18c0q", month: "https://buy.stripe.com/test_dRm4gBfIj7k81jnc5N18c0r" },
+  sustaining: { year: "https://buy.stripe.com/test_7sY28tanZ1ZO1jnb1J18c0s", month: "https://buy.stripe.com/test_fZueVf8fRgUIbY1edV18c0t" },
+  benefactor: { year: "https://buy.stripe.com/test_28EfZj3ZBbAo0fjedV18c0u", month: "https://buy.stripe.com/test_3cI6oJ67J7k88LP7Px18c0v" },
+};
 const TIERS = [
   {id:"discount", name:"Student · Educator · Military · Senior", short:"Student / Senior", who:"Students, educators, military, veterans, 65+", year:15,
    perks:["Free admission to IAM","2 free guest passes a year","10% off in the museum store","Members-only receptions & exhibit previews"], group:"main"},
@@ -324,14 +329,13 @@ const TIERS = [
    perks:["Free admission for 2 adults and all kids under 18","2 free guest passes a year","10% off in the museum store","Members-only receptions & exhibit previews"], group:"main"},
   {id:"associate", name:"Associate", short:"Associate", who:"Family + Smithsonian", year:100,
    perks:["Everything in Family","4 free guest passes a year","Dual Smithsonian membership*"], group:"main"},
-  {id:"supporting", name:"Supporting", short:"Supporting", who:"Family + Smithsonian", year:250, month:20.87,
+  {id:"supporting", name:"Supporting", short:"Supporting", who:"Family + Smithsonian", year:250, month:20.84,
    perks:["Everything in Associate","Option to pay monthly"], group:"more"},
-  {id:"sustaining", name:"Sustaining", short:"Sustaining", who:"Family + Smithsonian", year:500, month:41.74,
+  {id:"sustaining", name:"Sustaining", short:"Sustaining", who:"Family + Smithsonian", year:500, month:41.67,
    perks:["Everything in Associate","Option to pay monthly"], group:"more"},
-  {id:"benefactor", name:"Benefactor", short:"Benefactor", who:"Our most generous Friends", year:1000, month:83.37,
+  {id:"benefactor", name:"Benefactor", short:"Benefactor", who:"Our most generous Friends", year:1000, month:83.34,
    perks:["Everything in Associate","Founder’s Circle recognition","Option to pay monthly"], group:"more"},
 ];
-const CHECKOUT = {/* e.g. family: { year: "https://…", month: null } */};
 
 let billing = "year", selected = "family";
 const fmt = n => "$" + (Number.isInteger(n) ? n.toLocaleString() : n.toFixed(2));
@@ -358,14 +362,14 @@ function render(){
   });
   const t = TIERS.find(x => x.id === selected);
   const monthly = billing === "month" && t.month;
-  const priceTxt = monthly ? `${fmt(t.month)} / month × 12` : `${fmt(t.year)} / year`;
+  const priceTxt = monthly ? `${fmt(t.month)} / month` : `${fmt(t.year)} / year`;
   document.querySelectorAll("[data-summary]").forEach(e => e.innerHTML = `<b>${t.name}</b> · ${priceTxt}`);
   document.querySelector("[data-bar-name]").textContent = t.short + " membership";
   document.querySelector("[data-bar-price]").textContent = priceTxt;
-  const link = (CHECKOUT[t.id] && CHECKOUT[t.id][monthly ? "month" : "year"]) || (monthly ? MONTHLY_CHECKOUT : DEFAULT_CHECKOUT);
+  const link = CHECKOUT[t.id][monthly ? "month" : "year"];
   document.querySelectorAll("[data-checkout]").forEach(a => { a.href = link; a.dataset.tier = t.id; });
   document.querySelector(".billing-note").textContent =
-    billing === "month" ? "Monthly payments are available at the Supporting level and above. Same yearly total." : "";
+    billing === "month" ? "Monthly payments are available at the Supporting level and above." : "";
 }
 document.querySelectorAll("[data-billing]").forEach(b => b.addEventListener("click", () => {
   billing = b.dataset.billing;
