@@ -257,7 +257,7 @@
       <h2 class="title" id="ways-title">Not ready to join?</h2>
       <div class="ways">
         <a href="https://form.jotform.com/212436722699161"><b>Make a donation</b><span>Any amount, 100% tax-deductible. You can give in honor or memory of someone.</span></a>
-        <a href="https://form.jotform.com/212066067742050"><b>Volunteer</b><span>Help with Friends events and fundraising, or ask about joining the board.</span></a>
+        <a href="https://tally.so/r/Qo2pB1" data-tally="Qo2pB1"><b>Volunteer or get in touch</b><span>Help at events, join a committee or the board, or just ask us something.</span></a>
         <a href="https://lp.constantcontactpages.com/su/vGkhkD0/signup"><b>Get the newsletter</b><span>Exhibits, events and news from the Irving museums.</span></a>
       </div>
     </div>
@@ -382,8 +382,16 @@ const bar = document.querySelector(".joinbar");
 const hero = document.querySelector(".hero");
 new IntersectionObserver(([e]) => bar.classList.toggle("show", !e.isIntersecting), {threshold:0}).observe(hero);
 
+/* Contact / volunteer form (Tally) opens in a pop-up; the link works on its own if the script is blocked */
+document.querySelectorAll("[data-tally]").forEach(a => a.addEventListener("click", e => {
+  if (!window.Tally) return;
+  e.preventDefault();
+  Tally.openPopup(a.dataset.tally, {layout: "modal", width: 520, autoClose: 4000});
+}));
+
 document.getElementById("yr").textContent = new Date().getFullYear();
 render();
 </script>
+<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
